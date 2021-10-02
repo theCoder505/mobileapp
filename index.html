@@ -1290,7 +1290,7 @@
 
     $('.inactivated').click(function () {
 
-        $(".page").addClass("hidden");
+        
 
         console.log($(this).attr("id"));
         // console.log($(this).attr("id") + $('.activated').attr("id"));
@@ -1303,6 +1303,8 @@
         else if(   (($('.activated').attr("id")) == "notifications")  &&  (($(this).attr("id")) != "account" )  ){
             // slideBack($(this).attr("id"), $('.activated').attr("id"));
             slideBack($('.activated').attr("id"), $(this).attr("id")); 
+
+            $(".page").addClass("hidden");
 
             // $("#home").addClass("hidden");
             // $("#list").addClass("hidden");
@@ -1317,15 +1319,18 @@
 
         else if(   (($('.activated').attr("id")) == "record")  &&  (($(this).attr("id")) == "home" )  ){
             // slideBack($(this).attr("id"), $('.activated').attr("id"));
+            $(".page").addClass("hidden");
             slideBack($('.activated').attr("id"), $(this).attr("id")); 
         }
 
         else if( (($('.activated').attr("id")) == "account") ){
+            $(".page").addClass("hidden");
             slideBack($('.activated').attr("id"), $(this).attr("id")); 
         }
 
         
         else{
+            $(".page").addClass("hidden");
             slide($('.activated').attr("id"), $(this).attr("id"));  // home removes | records adds 
         }
 
